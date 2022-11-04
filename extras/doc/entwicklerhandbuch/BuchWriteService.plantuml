@@ -1,0 +1,88 @@
+' Copyright (C) 2019 - present Juergen Zimmermann, Hochschule Karlsruhe
+'
+' This program is free software: you can redistribute it and/or modify
+' it under the terms of the GNU General Public License as published by
+' the Free Software Foundation, either version 3 of the License, or
+' (at your option) any later version.
+'
+' This program is distributed in the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty of
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+' GNU General Public License for more details.
+'
+' You should have received a copy of the GNU General Public License
+' along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+' Preview durch <Alt>d
+
+@startuml Anwendungskern
+
+interface Promise<T>
+
+package @nestjs/common {
+  class "@Injectable" as Injectable
+  hide Injectable circle
+}
+
+package typeorm {
+  class Repository<T>
+}
+
+package @nestjs/typeorm {
+  class "@InjectRepository" as InjectRepository
+  hide InjectRepository circle
+}
+
+package mail {
+  class MailService
+}
+
+package magazin {
+  package entity {
+    class Magazin
+  }
+
+  package service #DDDDDD {
+    class MagazinInvalid
+    class TitelExists
+    class issnExists
+    class VersionInvalid
+    class VersionOutdated
+
+    class MagazinWriteService << control >> <<@Injectable()>> {
+      + async create(magazin: Magazin): Promise<string|MagazinInvalid|TitelExists|issnExists>
+      + async update(id: string, magazin: Magazin, version: string): Promise<number|MagazinInvalid|TitelExists|issnExists|VersionInvalid|VersionOutdated>
+      + async delete(id: string): Promise<boolean>
+    }
+
+    MagazinWriteService o--> "1" MagazinValidationService: validationService
+    MagazinWriteService o--> "1" MagazinReadService: readService
+    MagazinWriteService o--> "1" Repository: @InjectRepository repo
+    MagazinWriteService o--> "1" MailService: mailService
+
+    MagazinWriteService .up.> Injectable
+    MagazinWriteService .up.> InjectRepository
+
+    MagazinWriteService .up.> Promise
+    MagazinWriteService ..> Magazin
+    MagazinWriteService .up.> MagazinInvalid
+    MagazinWriteService .up.> TitelExists
+    MagazinWriteService .up.> issnExists
+    MagazinWriteService .up.> VersionInvalid
+    MagazinWriteService .up.> VersionOutdated
+
+    MagazinInvalid .up[hidden].> Magazin
+    Magazin .up[hidden].> Promise
+    Magazin .up[hidden].> Injectable
+    Magazin .up[hidden].> InjectRepository
+    TitelExists .up[hidden].> Magazin
+    MagazinValidationService .[hidden].> Repository
+    MagazinValidationService .[hidden].> MailService
+  }
+}
+
+hide empty members
+
+footer (c) Jürgen Zimmermann
+
+@enduml
