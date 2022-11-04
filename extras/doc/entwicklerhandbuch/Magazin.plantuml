@@ -40,7 +40,7 @@ package magazin.entity {
   class "type MagazinArt = 'DIGITAL' | 'DRUCKAUSGABE'" as MagazinArt
   hide MagazinArt circle
 
-  class "type Verlag = 'FOO_VERLAG' | 'BAR_VERLAG'" as Verlag
+  class "type Verlag = 'A_VERLAG' | 'B_VERLAG'" as Verlag
   hide Verlag circle
 
   class Magazin <<entity>> <<@Entity>> {

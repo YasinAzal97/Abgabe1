@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS magazin (
     titel         VARCHAR(40) UNIQUE NOT NULL,
     rating        INT NOT NULL CHECK (rating >= 0 AND rating <= 5),
     art           VARCHAR(12) NOT NULL CHECK (art = 'DRUCKAUSGABE' OR art = 'DIGITAL'),
-    verlag        VARCHAR(12) NOT NULL CHECK (verlag = 'FOO_VERLAG' OR verlag = 'BAR_VERLAG'),
+    verlag        VARCHAR(12) NOT NULL CHECK (verlag = 'A_VERLAG' OR verlag = 'B_VERLAG'),
     preis         DECIMAL(8,2) NOT NULL,
     rabatt        DECIMAL(4,3) NOT NULL,
     lieferbar     BOOLEAN NOT NULL DEFAULT FALSE,

@@ -183,7 +183,7 @@ describe('PUT /:id', () => {
                 'Ein Magazintitel muss mit einem Magazinstaben, einer Ziffer oder _ beginnen.',
                 `Eine Bewertung muss zwischen 0 und ${MAX_RATING} liegen.`,
                 'Die Art eines Magazines muss DIGITAL oder DRUCKAUSGABE sein.',
-                'Der Verlag eines Magazines muss FOO_VERLAG oder BAR_VERLAG sein.',
+                'Der Verlag eines Magazines muss A_VERLAG oder B_VERLAG sein.',
                 'Der Rabatt muss ein Wert zwischen 0 und 1 sein.',
                 'Das Datum muss im Format yyyy-MM-dd sein.',
                 'Die issn-Nummer ist nicht korrekt.',
