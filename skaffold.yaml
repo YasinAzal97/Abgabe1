@@ -43,8 +43,8 @@ deploy:
   helm:
     releases:
       - name: magazin
-        chartPath: extras/magazin
-        valuesFiles: [extras/magazin/values.yaml]
+        chartPath: extras/helm
+        valuesFiles: [extras/helm/values.yaml]
         namespace: acme
 # https://skaffold.dev/docs/environment/profiles
 profiles:
@@ -55,8 +55,8 @@ profiles:
       helm:
         releases:
           - name: magazin
-            chartPath: extras/magazin
-            valuesFiles: [extras/magazin/values.yaml, extras/magazin/dev.yaml]
+            chartPath: extras/helm
+            valuesFiles: [extras/helm/values.yaml, extras/helm/dev.yaml]
             namespace: acme
     # https://skaffold.dev/docs/pipeline-stages/port-forwarding
     portForward:

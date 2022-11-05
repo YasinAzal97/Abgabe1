@@ -20,6 +20,6 @@
 releases:
   - name: magazin
     namespace: acme
-    chart: extras/magazin
-    values: [extras/magazin/dev.yaml]
+    chart: extras/helm
+    values: [extras/helm/dev.yaml]
     #wait: true

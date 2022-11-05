@@ -74,11 +74,11 @@ include = [
 # https://registry.buildpacks.io/buildpacks/paketo-buildpacks/nodejs
 # https://github.com/paketo-buildpacks/nodejs/tags
 # https://console.cloud.google.com/gcr/images/paketo-buildpacks/GLOBAL/nodejs
-uri = "urn:cnb:registry:paketo-buildpacks/nodejs@0.26.0"
+uri = "urn:cnb:registry:paketo-buildpacks/nodejs@0.24.0"
 
 [[build.env]]
 name = "BP_NODE_VERSION"
-value = "18.11.0"
+value = "18.8.0"
 
 [[build.env]]
 name = "BP_LAUNCHPOINT"

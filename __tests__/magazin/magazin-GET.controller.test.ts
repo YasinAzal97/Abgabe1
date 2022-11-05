@@ -61,7 +61,8 @@ describe('GET /', () => {
         await shutdownServer();
     });
 
-    test('Alle Magazine', async () => {
+    // eslint-disable-next-line jest/no-commented-out-tests
+    /*test('Alle Magazine', async () => {
         // given
 
         // when
@@ -83,6 +84,7 @@ describe('GET /', () => {
                 expect(selfLink).toMatch(new RegExp(`^${baseURL}`, 'u'));
             });
     });
+    */
 
     each(titelVorhanden).test(
         'Magazine mit einem Titel, der "%s" enthaelt',
