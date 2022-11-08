@@ -202,7 +202,7 @@ export class MagazinWriteService {
         const { issn } = magazin;
         magazine = await this.#readService.find({ issn: issn }); // eslint-disable-line object-shorthand
         if (magazine.length > 0) {
-            return { type: 'issnExists', issn };
+            return { type: 'IssnExists', issn };
         }
 
         this.#logger.debug('#validateCreate: ok');

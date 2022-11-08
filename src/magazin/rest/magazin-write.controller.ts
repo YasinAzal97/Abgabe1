@@ -290,8 +290,8 @@ export class MagazinWriteController {
                 return this.#handleTitelExists(err.titel, res);
             }
 
-            case 'issnExists': {
-                return this.#handleissnExists(err.issn, res);
+            case 'IssnExists': {
+                return this.#handleIssnExists(err.issn, res);
             }
 
             default: {
@@ -320,12 +320,12 @@ export class MagazinWriteController {
             .send(msg);
     }
 
-    #handleissnExists(
+    #handleIssnExists(
         issn: string | null | undefined,
         res: Response,
     ): Response {
         const msg = `Die issn-Nummer "${issn}" existiert bereits.`;
-        this.#logger.debug('#handleissnExists(): msg=%s', msg);
+        this.#logger.debug('#handleIssnExists(): msg=%s', msg);
         return res
             .status(HttpStatus.UNPROCESSABLE_ENTITY)
             .set('Content-Type', 'text/plain')

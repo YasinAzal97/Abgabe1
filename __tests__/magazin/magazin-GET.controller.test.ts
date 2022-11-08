@@ -62,7 +62,8 @@ describe('GET /', () => {
     });
 
     // eslint-disable-next-line jest/no-commented-out-tests
-    /*test('Alle Magazine', async () => {
+    /*
+    test('Alle Magazine', async () => {
         // given
 
         // when

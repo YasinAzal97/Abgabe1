@@ -45,13 +45,13 @@ package magazin {
   package service #DDDDDD {
     class MagazinInvalid
     class TitelExists
-    class issnExists
+    class IssnExists
     class VersionInvalid
     class VersionOutdated
 
     class MagazinWriteService << control >> <<@Injectable()>> {
-      + async create(magazin: Magazin): Promise<string|MagazinInvalid|TitelExists|issnExists>
-      + async update(id: string, magazin: Magazin, version: string): Promise<number|MagazinInvalid|TitelExists|issnExists|VersionInvalid|VersionOutdated>
+      + async create(magazin: Magazin): Promise<string|MagazinInvalid|TitelExists|IssnExists>
+      + async update(id: string, magazin: Magazin, version: string): Promise<number|MagazinInvalid|TitelExists|IssnExists|VersionInvalid|VersionOutdated>
       + async delete(id: string): Promise<boolean>
     }
 
@@ -67,7 +67,7 @@ package magazin {
     MagazinWriteService ..> Magazin
     MagazinWriteService .up.> MagazinInvalid
     MagazinWriteService .up.> TitelExists
-    MagazinWriteService .up.> issnExists
+    MagazinWriteService .up.> IssnExists
     MagazinWriteService .up.> VersionInvalid
     MagazinWriteService .up.> VersionOutdated
 

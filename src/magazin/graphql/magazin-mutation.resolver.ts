@@ -147,7 +147,7 @@ export class MagazinMutationResolver {
             case 'TitelExists': {
                 return `Der Titel "${err.titel}" existiert bereits`;
             }
-            case 'issnExists': {
+            case 'IssnExists': {
                 return `Die issn ${err.issn} existiert bereits`;
             }
             default: {

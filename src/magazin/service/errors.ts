@@ -44,9 +44,8 @@ export interface TitelExists {
 /**
  * Klasse für eine bereits existierende issn-Nummer.
  */
-// eslint-disable-next-line @typescript-eslint/naming-convention
-export interface issnExists {
-    readonly type: 'issnExists';
+export interface IssnExists {
+    readonly type: 'IssnExists';
     readonly issn: string | null | undefined;
     readonly id?: string;
 }
@@ -54,10 +53,10 @@ export interface issnExists {
 /**
  * Union-Type für Fehler beim Neuanlegen eines Magazines:
  * - {@linkcode ConstraintViolations}
- * - {@linkcode issnExists}
+ * - {@linkcode IssnExists}
  * - {@linkcode TitelExists}
  */
-export type CreateError = ConstraintViolations | issnExists | TitelExists;
+export type CreateError = ConstraintViolations | IssnExists | TitelExists;
 
 /**
  * Klasse für eine ungültige Versionsnummer beim Ändern.
