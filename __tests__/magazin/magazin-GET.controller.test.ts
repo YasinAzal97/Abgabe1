@@ -61,32 +61,6 @@ describe('GET /', () => {
         await shutdownServer();
     });
 
-    // eslint-disable-next-line jest/no-commented-out-tests
-    /*
-    test('Alle Magazine', async () => {
-        // given
-
-        // when
-        const response: AxiosResponse<MagazineModel> = await client.get('/');
-
-        // then
-        const { status, headers, data } = response;
-
-        expect(status).toBe(HttpStatus.OK);
-        expect(headers['content-type']).toMatch(/json/iu);
-        expect(data).toBeDefined();
-
-        const { magazine } = data._embedded;
-
-        magazine
-            .map((magazin) => magazin._links.self.href)
-            .forEach((selfLink) => {
-                // eslint-disable-next-line security/detect-non-literal-regexp, security-node/non-literal-reg-expr
-                expect(selfLink).toMatch(new RegExp(`^${baseURL}`, 'u'));
-            });
-    });
-    */
-
     each(titelVorhanden).test(
         'Magazine mit einem Titel, der "%s" enthaelt',
         async (teilTitel: string) => {
