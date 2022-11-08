@@ -77,7 +77,7 @@ pipeline {
 
                 // https://www.jenkins.io/doc/pipeline/steps/git
                 // "named arguments" statt Funktionsaufruf mit Klammern
-                git url: 'https://github.com/YasinAzal97/Abgabe1', branch: 'main', poll: true
+                git url: 'https://github.com/YasinAzal97/Magazin', branch: 'main', poll: true
             }
         }
 
@@ -167,10 +167,10 @@ pipeline {
                   echo 'TODO: Links fuer Coverage und TypeDoc'
 
                   publishHTML (target : [
-                    reportDir: 'extras/doc/entwicklerhandmagazin/html',
-                    reportFiles: 'entwicklerhandmagazin.html',
-                    reportName: 'Entwicklerhandmagazin',
-                    reportTitles: 'Entwicklerhandmagazin'
+                    reportDir: 'extras/doc/entwicklerhandbuch/html',
+                    reportFiles: 'entwicklerhandbuch.html',
+                    reportName: 'Entwicklerhandbuch',
+                    reportTitles: 'Entwicklerhandbuch'
                   ])
 
                   publishHTML target : [
@@ -203,7 +203,7 @@ pipeline {
                     }
                     // https://www.jenkins.io/doc/pipeline/steps/pipeline-utility-steps/#zip-create-zip-file
                     zip zipFile: 'magazin.zip', archive: false, dir: 'dist'
-                    // jobs/magazin/builds/.../archive/magazin.zip
+                    // jobs/buch/builds/.../archive/buch.zip
                     archiveArtifacts 'magazin.zip'
                 }
             }
@@ -213,7 +213,7 @@ pipeline {
             steps {
               echo 'TODO: Docker-Image bauen: dockerd starten, pack installieren'
               // Docker-Installation und laufender Docker-Daemon erforderlich
-              // sh 'docker build --tag juergenzimmermann/magazin:1.0.0 .'
+              // sh 'docker build --tag juergenzimmermann/buch:1.0.0 .'
             }
         }
 
