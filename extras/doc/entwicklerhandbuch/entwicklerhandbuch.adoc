@@ -41,7 +41,8 @@ IMPORTANT: Copyright (C) 2020 - present Jürgen Zimmermann, Hochschule Karlsruhe
 
 === Der Applikationsserver im Überblick
 
-Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt.
+Der Applikationsserver stellt Webseiten oder allgemeine Dateien und Dokumente in einem 
+bestimmten Umfeld bereit
 
 .Use Cases
 [plantuml,use-cases,svg]
@@ -49,8 +50,7 @@ Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt.
 include::use-cases.plantuml[]
 ----
 
-Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor
-accumsan tincidunt.
+Übersicht der Use Cases 
 
 .Komponentendiagramm
 [plantuml,komponenten,svg]
@@ -60,11 +60,8 @@ include::komponenten.plantuml[]
 
 === Die REST-Schnittstelle
 
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet
-ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit
-amet ligula.
+Representational State Transfer ist ein Paradigma für die Softwarearchitektur von verteilten Systemen, insbesondere für Webservices. REST ist eine Abstraktion der Struktur und des Verhaltens 
+des World Wide Web.
 
 ."MagazinGetController" für Lesezugriffe an der REST-Schnittstelle
 [plantuml,MagazinGetController,svg]
@@ -72,8 +69,7 @@ amet ligula.
 include::MagazinGetController.plantuml[]
 ----
 
-Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec
-sollicitudin molestie malesuada.
+Model View Controllerist ein Muster zur Unterteilung einer Software in die drei Komponenten Datenmodell, Präsentation und Programmsteuerung. Das Muster kann sowohl als Architekturmuster als auch als Entwurfsmuster eingesetzt werden.Ziel des Musters ist ein flexibler Programmentwurf, der eine spätere Änderung oder Erweiterung erleichtert und eine Wiederverwendbarkeit der einzelnen Komponenten ermöglicht. 
 
 ."MagazinWriteController" für Schreibzugriffe an der REST-Schnittstelle
 [plantuml,MagazinGetController,svg]
@@ -83,7 +79,7 @@ include::MagazinWriteController.plantuml[]
 
 === Die GraphQL-Schnittstelle
 
-Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada.
+GraphQL ist eine Datenabfragesprache, die vor allem für mobile Nutzer und deren Anforderungen entwickelt wurde und die API-Funktionsweise verbessern soll.
 
 .MagazinQueryResolver für Lesezugriffe an der GraphQL-Schnittstelle
 [plantuml,MagazinQueryResolver,svg]
@@ -91,8 +87,7 @@ Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada.
 include::MagazinQueryResolver.plantuml[]
 ----
 
-Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a
-pellentesque nec, egestas non nisi.
+GraphQL ist eine Abfragesprache für Ihre API und eine serverseitige Laufzeit zum Ausführen von Abfragen unter Verwendung eines Typsystems, das Sie für Ihre Daten definieren.
 
 .MagazinMutationResolver für Schreibzugriffe an der GraphQL-Schnittstelle
 [plantuml,MagazinMutationResolver,svg]
@@ -102,7 +97,7 @@ include::MagazinMutationResolver.plantuml[]
 
 === Der Anwendungskern
 
-Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada.
+Geschäftslogik ist im Anwendungskern
 
 ."MagazinReadService" im Anwendungskern
 [plantuml,MagazinReadService,svg]
@@ -110,9 +105,8 @@ Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada.
 include::MagazinReadService.plantuml[]
 ----
 
-Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget
-malesuada.
-
+Im ReadService werden die Logik vom auslesen der Daten geschrieben und im Write zum 
+schreiben der Daten
 ."MagazinWriteService" im Anwendungskern
 [plantuml,MagazinWriteService,svg]
 ----
@@ -121,8 +115,7 @@ include::MagazinWriteService.plantuml[]
 
 === Klasse für Entities
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu erat,
-accumsan id imperdiet et, porttitor at sem.
+In der Informatik ist eine Entität ein eindeutig identifizierbares, einzelnes Informationsobjekt. Entitäten können sowohl reale Dinge oder Personen als auch abstrakte Objekte sein
 
 .Entity
 [plantuml,Magazin,svg]
