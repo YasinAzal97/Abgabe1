@@ -37,12 +37,12 @@ resourcesLimits:
 
 livenessProbe:
   initialDelay: 45
-  timeout: 15
+  timeout: 75
   period: 120
   failureThreshold: 1
 readinessProbe:
   initialDelay: 45
-  timeout: 15
+  timeout: 75
   period: 120
   failureThreshold: 1
 
