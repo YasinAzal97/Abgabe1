@@ -167,10 +167,10 @@ pipeline {
                   echo 'TODO: Links fuer Coverage und TypeDoc'
 
                   publishHTML (target : [
-                    reportDir: 'extras/doc/entwicklerhandmagazin/html',
-                    reportFiles: 'entwicklerhandmagazin.html',
-                    reportName: 'Entwicklerhandmagazin',
-                    reportTitles: 'Entwicklerhandmagazin'
+                    reportDir: 'extras/doc/entwicklerhandbuch/html',
+                    reportFiles: 'entwicklerhandbuch.html',
+                    reportName: 'Entwicklerhandbuch',
+                    reportTitles: 'Entwicklerhandbuch'
                   ])
 
                   publishHTML target : [
