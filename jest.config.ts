@@ -56,7 +56,7 @@ const jestConfig: Config.InitialOptions = {
     ],
     coverageReporters: ['text-summary', 'html'],
     errorOnDeprecated: true,
-    testTimeout: 10_000,
+    testTimeout: 20_000,
     verbose: true,
 };
 
