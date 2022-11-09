@@ -144,7 +144,7 @@
     "apollo-server-types": "3.6.3",
     "asciidoctor": "2.2.6",
     "asciidoctor-kroki": "0.16.0",
-    "clinic": "12.0.0",
+    "clinic": "9.1.0",
     "depcheck": "1.4.3",
     "eslint": "8.26.0",
     "eslint-config-prettier": "8.5.0",
